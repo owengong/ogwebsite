@@ -1,208 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <!-- Standard -->
-    <script type="text/javascript">
-        var host = "cncstudios.org";
-        if ((host == window.location.host) && (window.location.protocol != "https:"))
-        window.location.protocol = "https";
-    </script>
-    <link rel="canonical" href="https://cncstudios.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Owen Gong</title>
-    <link rel="shortcut icon" href="assets/img/logo.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
-    <meta name="theme-color" content="#345678">
+    <meta
+      name="description"
+      content="Software Engineer at January. Previously Google and Amazon. UC Berkeley CS & Applied Math."
+    />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/standard.css">
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme === "light" || theme === "dark") {
+            document.documentElement.setAttribute("data-theme", theme);
+          }
+        } catch (e) {}
+      })();
+    </script>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/jquery.easing.1.3.js"></script>
-    <script src="assets/js/standard.js"></script>
+    <link rel="stylesheet" href="assets/css/standard.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+    <meta name="theme-color" content="#f7f3ec" />
 
-    <!-- Preview -->
-    <meta name="description" content="Software Engineer at Google. UC Berkeley CS and Math Graduate. A digital portfolio.">
-
-    <!-- Mobile Preview -->
     <meta property="og:title" content="Owen Gong" />
+    <meta
+      property="og:description"
+      content="Software Engineer at January. Previously Google and Amazon. UC Berkeley CS & Applied Math."
+    />
     <meta property="og:image" content="assets/img/preview.jpg" />
-    <meta property="og:description" content="Software Engineer at Google. UC Berkeley CS and Math Graduate. A digital portfolio." />
 
-</head>
-<body>
-<!-- Loading Container -->
-<div id="load">
-    <div id="loading-container">
-        <center>
-            <img id="loading-image" alt="Loading Image" src="assets/img/logo.png">
-        <!-- Loading Animation -->
-            <div class="loading-bar">
-                <div class="move-bar"></div>
-            </div>
-        </center>
-    </div>
-</div>
+    <script src="assets/js/theme.js" defer></script>
+  </head>
 
-<!-- Nav Bar -->
-<div class="nav-wrapper nav-wrapper-add">
-    <div class="nav-left">
-        <img id="nav-img" alt="Nav Logo" src="assets/img/logo.png">
-    </div>
-    <div class="nav-right">
-        <span class="nav-tog" id="tab5">Blog</span>
-        <span class="nav-tog" id="tab4">Projects</span>
-        <span class="nav-tog" id="tab3">Résumé</span>
-        <span class="nav-tog" id="tab2">Teaching</span>
-        <span class="nav-tog" id="tab1">About</span>
-    </div>
-</div>
+  <body>
+    <!-- Theme toggle (top-right) -->
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
 
-<!-- Main Body -->
-<div id="body-container">
-    <!-- Cover -->
-    <div class="cover-wrapper">
-        <!-- Title -->
-        <div class="cover-title">
-            <div class="cover-t-container">
-                <h1 style="font-family:verdana;">Owen Gong</h1>
-                <h2><b><i>Los Angeles, CA</i></b></h2>
-            </div>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="name">Owen Gong</h1>
+        <p class="tagline">Software Engineer at January · New York City</p>
+
+        <div class="socials">
+          <a href="https://linkedin.com/in/gongowen" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="social-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/owengong" target="_blank" rel="noreferrer" aria-label="GitHub" class="social-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <span class="divider"></span>
+          <a href="mailto:owengong15@gmail.com" class="email">owengong15@gmail.com</a>
         </div>
+      </div>
+    </header>
 
-        <!-- Cover Image -->
-        <div class="cover-image" style="background-image: url(assets/img/grad.png); background-position: top center !important; filter: grayscale(55%)"></div>
+    <main>
+      <div class="container">
+        <section class="about" aria-label="About">
+          <p>
+            I'm a software engineer at <a href="https://www.january.com/" target="_blank" rel="noreferrer"><strong>January</strong></a>, building systems that power seamless client 
+            onboarding and our core workflow execution engine.
+          </p>
+          <p>
+            Previously, I worked at <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><strong>YouTube (Google)</strong></a>, building early infrastructure for Shorts 
+            and content sharing. Before that, I interned twice at <a href="https://www.amazon.com/gp/video/storefront" target="_blank" rel="noreferrer"><strong>Prime Video (Amazon)</strong></a>, working on 
+            recommendation systems and catalog enrichment.
+          </p>
+          <p>
+            I studied Computer Science and Applied Mathematics at <a href="https://www.berkeley.edu/" target="_blank" rel="noreferrer"><strong>UC Berkeley</strong></a>, where I also served 
+            as a head TA in EECS.
+          </p>
+          <p>
+            I've visited 25 countries and lived between Shanghai, Singapore, Omaha, Pittsburgh, Berkeley, Seattle, and 
+            Los Angeles, but at the moment I'm convinced that New York City is the greatest place on earth.
+          </p>
+        </section>
 
-        <!-- Down Arrow -->
-        <div id="down-arrow-container">
-            <u class="down"></u>
+        <div class="actions">
+          <a class="button" href="assets/data/og_swe_resume.pdf" target="_blank" rel="noreferrer">
+            Download résumé
+          </a>
+          <a class="button button-ghost" href="teaching.html">Legacy teaching materials</a>
         </div>
-    </div>
+      </div>
+    </main>
 
-    <!-- SECTION 1 -->
-    <div class="page section-1">
-        <!-- Left -->
-        <div class="page-split ps-image">
-            <div class="split-content">
-                <img class="ps-img" alt="Intro Portrait" src="assets/img/intro-portrait.png">
-            </div>
-        </div>
-        <!-- Right -->
-        <div class="page-split ps-text">
-            <div class="split-content">
-                <p class="split-header">About Me</p>
-                <p class="split-text">Hey there! My name is Owen and I am currently a Software Engineer at Google working on hashtags infrastructure and analytics for YouTube. I graduated in 2022 with Computer Science and Applied Mathematics degrees at the University of California, Berkeley. This site consolidates my professional information, teaching resources, as well as random thoughts I have about life. Feel free to poke around!</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section-break"></div>
-
-    <!-- SECTION 2 -->
-    <div class="dark-page section-2">
-        <div class="top-tri"></div>
-        <div class="bottom-tri"></div>
-
-        <!-- Left -->
-        <div class="page-split ps-text">
-            <div class="split-content">
-                <p class="split-header">Teaching Resources</p>
-                <p class="split-text">Here are some resources for classes I have taught or taken at UC Berkeley. Let me know if you have any comments or concerns!<br><br><span class="in-text-link"><a href="teaching.html" rel="noreferrer">Get Started &raquo;</a></span></p>
-            </div>
-        </div>
-        <!-- Right -->
-        <div class="page-split ps-image">
-            <div class="split-content">
-                <img class="ps-img" alt="Teaching Logo" src="assets/img/teaching.png">
-            </div>
-        </div>
-
-    </div>
-
-    <div class="section-break"></div>
-
-    <!-- SECTION 3 -->
-    <div class="page section-3">
-        <!-- Left -->
-        <div class="page-split ps-image">
-            <div class="split-content">
-                <img class="ps-img" alt="Resume Logo" src="assets/img/resume.png">
-            </div>
-        </div>
-        <!-- Right -->
-        <div class="page-split ps-text">
-            <div class="split-content">
-                <p class="split-header">Résumé</p>
-                <p class="split-text">Interested in my skillset? Curious to what experiences I have? Or maybe you hate killing that extra tree for a sheet of paper. Check out my résumé here!<br><br><span class="in-text-link"><a href="assets/data/Owen_Gong_SWE_Resume.pdf" target="_blank" rel="noreferrer">View Résumé &raquo;</a></span></p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="section-break"></div>
-
-    <!-- SECTION 4 -->
-    <div class="dark-page section-4">
-        <div class="top-tri"></div>
-        <div class="bottom-tri"></div>
-
-        <!-- Left -->
-        <div class="page-split ps-text">
-            <div class="split-content">
-                <p class="split-header">Projects</p>
-                <p class="split-text">Check out these projects I have made, ranging from Java applications to woodworking endeavors.<br><br><span class="in-text-link"><a href="projects.html" rel="noreferrer">Projects Page &raquo;</a></span></p>
-            </div>
-        </div>
-        <!-- Right -->
-        <div class="page-split ps-image">
-            <div class="split-content">
-                <img class="ps-img" alt="Projects Logo" src="assets/img/projects.png">
-            </div>
-        </div>
-
-    </div>
-
-    <div class="section-break"></div>
-
-    <!-- SECTION 5 -->
-    <div class="page section-5">
-        <!-- Left -->
-        <div class="page-split ps-image">
-            <div class="split-content">
-                <img class="ps-img" alt="Blog Logo" src="assets/img/bloglogo.png">
-            </div>
-        </div>
-        <!-- Right -->
-        <div class="page-split ps-text">
-            <div class="split-content">
-                <p class="split-header">The OD Life Blog</p>
-                <p class="split-text">A blog page that I share with a friend to jot down personal insights on college, sports, book reviews,
-                                    and just about anything in our lives! Feel free to check it out.
-                                    <br><br><span class="in-text-link"><a href="https://medium.com/the-od-life" target="_blank" rel="noreferrer">Link to Blog &raquo;</a></span></p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="section-break"></div>
-
-    <!-- Footer -->
-    <div class="footer-wrapper">
-        <img class="footer-img" alt="Footer Image" src="assets/img/logo.png">
-        <p class="footer-text"><span class="footer-dash">&mdash;</span> 2023 &copy; Owen Gong <span class="footer-dash">&mdash;</span><br>Los Angeles, CA, USA</p>
-    <!-- Social Media -->
-            <div class="soc-med-wrapper">
-                <a href="https://www.linkedin.com/in/gongowen/" target="_blank" rel="noreferrer">
-                    <img class="soc-med-icon" alt="LinkedIn Link" src="assets/img/social/linkedin.png">
-                </a>
-                <a href="https://github.com/gowenong" target="_blank" rel="noreferrer">
-                    <img class="soc-med-icon" alt="GitHub Link" src="assets/img/social/github.png">
-                </a>
-            </div>
-    </div>
-</div>
-<!-- End of Body -->
-
-</body>
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Owen Gong</p>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,176 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <!-- Standard -->
-    <script type="text/javascript">
-        var host = "cncstudios.org";
-        if ((host == window.location.host) && (window.location.protocol != "https:"))
-        window.location.protocol = "https";
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Owen Gong | Legacy Teaching</title>
+    <meta name="description" content="Archived teaching materials and study resources from UC Berkeley." />
+
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme === "light" || theme === "dark") {
+            document.documentElement.setAttribute("data-theme", theme);
+          }
+        } catch (e) {}
+      })();
     </script>
-    <link rel="canonical" href="https://cncstudios.org">
-    <title>Owen Gong | Teaching</title>
-    <link rel="shortcut icon" href="assets/img/logo.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
-    <meta name="theme-color" content="#345678">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/standard.css">
+    <link rel="stylesheet" href="assets/css/standard.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+    <meta name="theme-color" content="#f7f3ec" />
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/jquery.easing.1.3.js"></script>
-    <script src="assets/js/teaching.js"></script>
+    <script src="assets/js/theme.js" defer></script>
+  </head>
 
-    <!-- Preview -->
-    <meta name="description" content="Software Engineer at Google. UC Berkeley CS and Math Graduate. A digital portfolio.">
+  <body>
+    <!-- Theme toggle -->
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
 
-    <!-- Mobile Preview -->
-    <meta property="og:title" content="Owen Gong" />
-    <meta property="og:image" content="assets/img/preview.jpg" />
-    <meta property="og:description" content="Software Engineer at Google. UC Berkeley CS and Math Graduate. A digital portfolio." />
+    <header class="site-header">
+      <div class="container">
+        <div class="site-title-row">
+          <div>
+            <h1 class="name">Legacy Teaching</h1>
+            <p class="tagline">Archived UC Berkeley materials</p>
+          </div>
 
-</head>
-<body>
-<!-- Loading Container -->
-<div id="load">
-    <div id="loading-container">
-        <center>
-            <img id="loading-image" alt="Loading Image" src="assets/img/logo.png">
-        <!-- Loading Animation -->
-            <div class="loading-bar">
-                <div class="move-bar"></div>
-            </div>
-        </center>
-    </div>
-</div>
-
-<!-- Nav Bar -->
-<div class="nav-wrapper nav-wrapper-add">
-    <div class="nav-left">
-        <img id="nav-img" alt="Nav Logo" src="assets/img/logo.png">
-    </div>
-    <div class="nav-right">
-        <a href="index.html" rel="noreferrer"><span class="nav-tog" id="tab1">&#8634; Back Home</span></a>
-    </div>
-</div>
-
-<!-- Main Body -->
-<div id="body-container">
-    <!-- Cover -->
-    <div class="cover-wrapper">
-        <!-- Title -->
-        <div class="cover-title">
-            <div class="cover-t-container">
-                <h1>Teaching</h1>
-                <h2><b><i>Computer Science</i></b></h2>
-            </div>
+          <div>
+            <a class="button" href="index.html">← Back</a>
+          </div>
         </div>
 
-        <!-- Cover Image -->
-        <div class="cover-image" style="background-image: url(assets/img/teaching-cover.jpg);"></div>
+        <nav class="site-nav" aria-label="Course sections">
+          <a href="#cs370">CS 370</a>
+          <a href="#cs61a">CS 61A</a>
+          <a href="#cs61b">CS 61B</a>
+          <a href="#data100">Data C100</a>
+          <a href="#cs170">CS 170</a>
+        </nav>
+      </div>
+    </header>
 
-        <!-- Down Arrow -->
-        <div id="down-arrow-container">
-            <u class="down"></u>
-        </div>
-    </div>
-    <!-- SECTION 1 -->
-    <div class="page section-1">
-        <!-- Whole -->
-        <div class="split-content">
-            <div class="page-split-teaching">
+    <main>
+      <div class="container">
+        <section aria-label="Note">
+          <div class="card">
+            <p class="small">
+              These links are provided as a personal archive from my time teaching and studying at UC Berkeley. 
+              If you're currently enrolled, always defer to official course materials.
+            </p>
+          </div>
+        </section>
 
-              <!-- Class Division -->
-              <ul class="teaching-header">CS 370
-                  <li class="topic-pri"> <a rel="noreferrer" href="https://docs.google.com/presentation/d/1aON9eFi8rVt72p-zdMfqnBuzLyb9HT_DTx0pocBDmZM/edit?usp=sharing">
-                    How to Teach Computer Science</a>
-              </ul>
-
-                <!-- Class Division -->
-                <ul class="teaching-header">CS 61A
-                    <li class="topic-pri"> <a rel="noreferrer" href="https://drive.google.com/drive/u/1/folders/1O0OCbXXtiAigF5-fTpV5UU1v1f3CY-29">
-                      [FALL 2021] Discussion Slides and Material</a>
-                    <li class="topic-pri"> <a rel="noreferrer" href="https://docs.google.com/presentation/d/15-bueDMY7vnYNG_EgJITYVJ6DJpwwEgY-HZ8WMNBc44/edit#slide=id.p">
-                      Python Lists Review</a>
-                    <li class="topic-pri"> <a rel="noreferrer" href="https://docs.google.com/presentation/d/1ZXfhkMTmKNaKwezAFXFMrwUDnLjd9Uxt0TrQAGKUiM8/edit#slide=id.p">
-                      OOP WWPD Guide</a>
-                      <!--  <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li>
-                    </li>
-                    <li class="topic-pri">Topic Pri 2
-                        <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li>
-                    </li> -->
-                </ul>
-
-                <ul class="teaching-header">CS 61B
-                    <li class="topic-pri"> <a rel="noreferrer" href="https://docs.google.com/document/d/1PMoL1xJ9xa6ywQQ8HCc1oxLf2TUCiCaKaatlKYv6RZw/edit?usp=sharing">
-                        Data Structures and Sorting Cheat Sheet</a>
-                    <li class="topic-pri"> <a rel="noreferrer" href="assets/data/Runtime_DS_BST.pdf">
-                        Asympotics, Disjoint Sets, and BSTs Review</a>
-                    <li class="topic-pri"> <a rel="noreferrer" href="assets/data/RB_Hash_Heap.pdf">
-                        Red-Black Trees, Hash Tables, and Heaps Review</a>
-                    <li class="topic-pri"> <a rel="noreferrer" href="assets/data/Trees_Graphs.pdf">
-                        Tree and Graph Traversals Review</a>
-                    <li class="topic-pri"> <a rel="noreferrer" href="assets/data/Paths_MST_Tries.pdf">
-                        Shortest Paths, MSTs, and Tries Review</a>
-                        <!-- <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li> -->
-                    </li>
-                    <!-- <li class="topic-pri">Topic Pri 2
-                        <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li>
-                    </li> -->
-                </ul>
-
-                <ul class="teaching-header">Data C100
-                    <li class="topic-pri"> <a rel="noreferrer" href="https://docs.google.com/document/d/1Xb2iT6YOEFWKFPaTzA-GUMVE5FV1gtBKu55WOffJhXA/edit?usp=sharing">
-                      Data 100 Final Study Guide </a>
-                        <!-- <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li> -->
-                    </li>
-                    <!-- <li class="topic-pri">Topic Pri 2
-                        <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li>
-                    </li> -->
-                </ul>
-
-                <ul class="teaching-header">CS 170
-                    <li class="topic-pri"> <a rel="noreferrer" href="https://docs.google.com/document/d/1ssM48wtVfMJUzkhlWQ8qBp5X9ZcL5eefyeF3pwjhgqg/edit?usp=sharing">
-                      Algorithms Cheat Sheet (INCOMPLETE)</a>
-                        <!-- <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li> -->
-                    </li>
-                    <!-- <li class="topic-pri">Topic Pri 2
-                        <li class="topic-sec">Sec 1</li>
-                        <li class="topic-sec">Sec 2</li>
-                    </li> -->
-                </ul>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="section-break"></div>
-
-    <!-- Footer -->
-    <div class="footer-wrapper">
-        <img class="footer-img" alt="Footer Image" src="assets/img/logo.png">
-        <p class="footer-text"><span class="footer-dash">&mdash;</span> 2022 &copy; Owen Gong <span class="footer-dash">&mdash;</span><br>Los Angeles, CA, USA</p>
-    <!-- Social Media -->
-            <div class="soc-med-wrapper">
-                <a href="https://www.linkedin.com/in/gongowen/" target="_blank" rel="noreferrer">
-                    <img class="soc-med-icon" alt="LinkedIn Link" src="assets/img/social/linkedin.png">
+        <section id="cs370" aria-label="CS 370">
+          <h2 class="section-title">CS 370</h2>
+          <div class="card">
+            <ul class="bullets">
+              <li>
+                <a href="https://docs.google.com/presentation/d/1aON9eFi8rVt72p-zdMfqnBuzLyb9HT_DTx0pocBDmZM/edit?usp=sharing" target="_blank" rel="noreferrer">
+                  How to Teach Computer Science
                 </a>
-                <a href="https://github.com/gowenong" target="_blank" rel="noreferrer">
-                    <img class="soc-med-icon" alt="GitHub Link" src="assets/img/social/github.png">
-                </a>
-            </div>
-    </div>
-</div>
-<!-- End of Body -->
+              </li>
+            </ul>
+          </div>
+        </section>
 
-</body>
+        <section id="cs61a" aria-label="CS 61A">
+          <h2 class="section-title">CS 61A</h2>
+          <div class="card">
+            <ul class="bullets">
+              <li>
+                <a href="https://drive.google.com/drive/u/1/folders/1O0OCbXXtiAigF5-fTpV5UU1v1f3CY-29" target="_blank" rel="noreferrer">
+                  [Fall 2021] Discussion slides &amp; materials
+                </a>
+              </li>
+              <li>
+                <a href="https://docs.google.com/presentation/d/15-bueDMY7vnYNG_EgJITYVJ6DJpwwEgY-HZ8WMNBc44/edit#slide=id.p" target="_blank" rel="noreferrer">
+                  Python lists review
+                </a>
+              </li>
+              <li>
+                <a href="https://docs.google.com/presentation/d/1ZXfhkMTmKNaKwezAFXFMrwUDnLjd9Uxt0TrQAGKUiM8/edit#slide=id.p" target="_blank" rel="noreferrer">
+                  OOP WWPD guide
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="cs61b" aria-label="CS 61B">
+          <h2 class="section-title">CS 61B</h2>
+          <div class="card">
+            <ul class="bullets">
+              <li>
+                <a href="https://docs.google.com/document/d/1PMoL1xJ9xa6ywQQ8HCc1oxLf2TUCiCaKaatlKYv6RZw/edit?usp=sharing" target="_blank" rel="noreferrer">
+                  Data structures &amp; sorting cheat sheet
+                </a>
+              </li>
+              <li>
+                <a href="assets/data/Runtime_DS_BST.pdf" target="_blank" rel="noreferrer">
+                  Asymptotics, disjoint sets, and BSTs review (PDF)
+                </a>
+              </li>
+              <li>
+                <a href="assets/data/RB_Hash_Heap.pdf" target="_blank" rel="noreferrer">
+                  Red‑black trees, hash tables, and heaps review (PDF)
+                </a>
+              </li>
+              <li>
+                <a href="assets/data/Trees_Graphs.pdf" target="_blank" rel="noreferrer">
+                  Tree and graph traversals review (PDF)
+                </a>
+              </li>
+              <li>
+                <a href="assets/data/Paths_MST_Tries.pdf" target="_blank" rel="noreferrer">
+                  Shortest paths, MSTs, and tries review (PDF)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="data100" aria-label="Data C100">
+          <h2 class="section-title">Data C100</h2>
+          <div class="card">
+            <ul class="bullets">
+              <li>
+                <a href="https://docs.google.com/document/d/1Xb2iT6YOEFWKFPaTzA-GUMVE5FV1gtBKu55WOffJhXA/edit?usp=sharing" target="_blank" rel="noreferrer">
+                  Data 100 final study guide
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="cs170" aria-label="CS 170">
+          <h2 class="section-title">CS 170</h2>
+          <div class="card">
+            <ul class="bullets">
+              <li>
+                <a href="https://docs.google.com/document/d/1ssM48wtVfMJUzkhlWQ8qBp5X9ZcL5eefyeF3pwjhgqg/edit?usp=sharing" target="_blank" rel="noreferrer">
+                  Algorithms cheat sheet (incomplete)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Owen Gong</p>
+      </div>
+    </footer>
+  </body>
 </html>
