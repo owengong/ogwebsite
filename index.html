@@ -32,6 +32,31 @@
     <meta property="og:image" content="assets/img/preview.jpg" />
 
     <script src="assets/js/theme.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const copyBtn = document.getElementById('copy-email');
+        const toast = document.getElementById('copy-toast');
+        
+        copyBtn.addEventListener('click', async function() {
+          const email = this.getAttribute('data-email');
+          try {
+            await navigator.clipboard.writeText(email);
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 1500);
+          } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 1500);
+          }
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -70,7 +95,8 @@
             </svg>
           </a>
           <span class="divider"></span>
-          <a href="mailto:owengong15@gmail.com" class="email">owengong15@gmail.com</a>
+          <button type="button" class="email" id="copy-email" data-email="owengong15@gmail.com">owengong15@gmail.com</button>
+          <span class="copy-toast" id="copy-toast">Copied</span>
         </div>
       </div>
     </header>
