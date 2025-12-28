@@ -1,10 +1,21 @@
-# Owen Gong — personal website
+# owengong.com
 
-[Last updated: 2025]
+Personal website + Owencyclopedia.
 
-- **Main page**: `index.html` (career/resume)
-- **Legacy teaching**: `teaching.html` (archived UC Berkeley materials)
+## Structure
 
-Edit `index.html` and `assets/css/standard.css` to update content or styling.
+- `index.html` — main site
+- `teaching.html` — archived UC Berkeley TA materials
+- `owencyclopedia/` — fractal life map
+- `assets/` — CSS, images, fonts, PDFs
 
+## Local dev
 
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+## Deploy
+
+Hosted on GitHub Pages with custom domain `owengong.com`.
