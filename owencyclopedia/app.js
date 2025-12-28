@@ -357,8 +357,8 @@
 
     const children = getChildren(focus.id);
     const parentId = parentById.get(focus.id) || null;
-    // We don't need to show the root "Owencyclopedia" as the parent for top-level categories.
-    const parent = parentId && parentId !== DATA.rootId ? getNode(parentId) : null;
+    // Show parent node if one exists (allows navigating back up)
+    const parent = parentId ? getNode(parentId) : null;
     const { radius: childRadius, positions } = layoutChildrenRadial(children, Boolean(parent));
     const parentPos = parent ? { id: parent.id, x: 0, y: -clamp((childRadius || 220) * 0.62, 120, 210) } : null;
 
@@ -778,6 +778,61 @@
     elLensSvg.addEventListener("dblclick", (e) => {
       e.preventDefault();
       resetMapView({ keepZoom: false });
+    });
+
+    // Pinch-to-zoom for touch devices (throttled with rAF)
+    let pinch = { active: false, startDist: 0, startZoom: 1, pending: null };
+
+    function getTouchDistance(t1, t2) {
+      const dx = t2.clientX - t1.clientX;
+      const dy = t2.clientY - t1.clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function getTouchCenter(t1, t2) {
+      return {
+        x: (t1.clientX + t2.clientX) / 2,
+        y: (t1.clientY + t2.clientY) / 2,
+      };
+    }
+
+    elLensSvg.addEventListener("touchstart", (e) => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        pinch.active = true;
+        pinch.startDist = getTouchDistance(e.touches[0], e.touches[1]);
+        pinch.startZoom = map.zoom;
+      }
+    }, { passive: false });
+
+    elLensSvg.addEventListener("touchmove", (e) => {
+      if (!pinch.active || e.touches.length !== 2) return;
+      e.preventDefault();
+      
+      // Throttle updates to animation frames
+      if (pinch.pending) return;
+      
+      const dist = getTouchDistance(e.touches[0], e.touches[1]);
+      const center = getTouchCenter(e.touches[0], e.touches[1]);
+      
+      pinch.pending = requestAnimationFrame(() => {
+        pinch.pending = null;
+        const scale = dist / pinch.startDist;
+        const next = clamp(pinch.startZoom * scale, map.minZoom, map.maxZoom);
+        if (next !== map.zoom) {
+          zoomAtClientPoint(next, center.x, center.y);
+        }
+      });
+    }, { passive: false });
+
+    elLensSvg.addEventListener("touchend", (e) => {
+      if (e.touches.length < 2) {
+        pinch.active = false;
+        if (pinch.pending) {
+          cancelAnimationFrame(pinch.pending);
+          pinch.pending = null;
+        }
+      }
     });
   }
 

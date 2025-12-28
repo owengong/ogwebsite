@@ -506,6 +506,7 @@ details[open] > summary .outline__caret {
   cursor: pointer;
   opacity: 1;
   transition: opacity 180ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .node.is-entering {
@@ -538,19 +539,30 @@ details[open] > summary .outline__caret {
   pointer-events: none;
 }
 
-.node:hover .node__circle {
-  fill: rgba(255, 255, 255, 0.92);
-  stroke: rgba(28, 25, 23, 0.22);
+@media (hover: hover) {
+  .node:hover .node__circle {
+    fill: rgba(255, 255, 255, 0.92);
+    stroke: rgba(28, 25, 23, 0.22);
+  }
 }
 
 .node--focus {
-  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.16));
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.15));
 }
 
 .node--focus .node__circle {
-  fill: rgba(255, 255, 255, 0.95);
-  stroke: var(--nodeAccent, rgba(34, 211, 238, 0.7));
-  stroke-width: 1.6;
+  fill: rgba(255, 255, 255, 0.95) !important;
+  stroke: var(--nodeAccent, rgba(34, 211, 238, 0.7)) !important;
+  stroke-width: 1.6 !important;
+}
+
+/* Prevent any state from overriding focus node border */
+.node--focus:hover .node__circle,
+.node--focus:active .node__circle,
+.node--focus:focus .node__circle {
+  fill: rgba(255, 255, 255, 0.95) !important;
+  stroke: var(--nodeAccent, rgba(34, 211, 238, 0.7)) !important;
+  stroke-width: 1.6 !important;
 }
 
 .node--focus .node__label {

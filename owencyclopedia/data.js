@@ -25,8 +25,8 @@ window.OWEN_MVP = {
       id: "home",
       title: "Owencyclopedia",
       blurb:
-        "Documenting the world through my lens.",
-      content: "Hey, my name is Owen. I've collected thoughts on every dimension I could think of since 2018, and figured I'd share an abridged version publicly. This is not advice or a protocol to follow—just empirical experiences and judgments I've gathered that help me make sense of the world.",
+        "Documenting my world.",
+      content: "Hey, my name is Owen. I've collected thoughts on every dimension of my life I could think of since 2018, and figured I'd share an abridged version publicly. This is not advice or a protocol to follow—just empirical experiences and judgments I've gathered that help me make sense of the world.",
       aliases: ["owen", "home", "life map", "fractal"],
       children: [
         "health",
