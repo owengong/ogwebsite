@@ -62,26 +62,9 @@ window.OWEN_MVP = {
       id: "health-mental",
       title: "Mental",
       blurb: "The software.",
-      children: ["health-mental-meditation", "health-mental-therapy", "health-mental-models"],
+      children: ["health-mental-models"],
       related: ["purpose-mission"],
     },
-    {
-      id: "health-mental-meditation",
-      title: "Meditation",
-      content: `# Meditation
-
-This page is for **how I practice**, not what meditation “is”.
-
-## Defaults
-- Minimum: 10 minutes
-- Preferred: mornings
-- Output: one sentence note afterwards (what I noticed)
-
-## When I’m stuck
-- Do less. Do it today.
-- Pick one technique (breath, body scan, open awareness) and stay with it.`
-    },
-    { id: "health-mental-therapy", title: "Therapy Notes", aliases: ["reflection"] },
     { id: "health-mental-models", title: "Mental Models", aliases: ["psychology"] },
 
     {
@@ -91,22 +74,7 @@ This page is for **how I practice**, not what meditation “is”.
       children: ["health-diet-principles", "health-diet-meals", "health-diet-supplements"],
       aliases: ["nutrition"],
     },
-    {
-      id: "health-diet-principles",
-      title: "Nutrition Principles",
-      content: `# Nutrition Principles
-
-This is where I keep the “rules of thumb” that survive fads.
-
-## The point
-My diet is a tool for energy, mood stability, and long-term health.
-
-## Principles (draft)
-- Protein as an anchor
-- Fiber most days
-- Eat like an adult 80% of the time, play the other 20%
-- Track when experimenting; otherwise keep it simple`
-    },
+    { id: "health-diet-principles", title: "Nutrition Principles" },
     { id: "health-diet-meals", title: "Favorite Meals" },
     { id: "health-diet-supplements", title: "Supplements", aliases: ["stack"] },
 
@@ -151,10 +119,9 @@ My diet is a tool for energy, mood stability, and long-term health.
       children: ["mastery-skills", "mastery-projects", "mastery-knowledge", "mastery-principles"],
       related: ["work", "purpose-mission"],
     },
-    { id: "mastery-skills", title: "Skills", children: ["mastery-skills-technical", "mastery-skills-soft", "mastery-skills-log"] },
+    { id: "mastery-skills", title: "Skills", children: ["mastery-skills-technical", "mastery-skills-soft"] },
     { id: "mastery-skills-technical", title: "Technical" },
     { id: "mastery-skills-soft", title: "Soft Skills" },
-    { id: "mastery-skills-log", title: "Practice Log" },
     { id: "mastery-projects", title: "Projects", children: ["mastery-projects-current", "mastery-projects-past", "mastery-projects-ideas"] },
     { id: "mastery-projects-current", title: "Current" },
     { id: "mastery-projects-past", title: "Past" },
@@ -214,20 +181,7 @@ My diet is a tool for energy, mood stability, and long-term health.
       related: ["relationships", "mastery"],
     },
     { id: "purpose-mission", title: "Mission", children: ["purpose-mission-statement", "purpose-mission-evolution"] },
-    {
-      id: "purpose-mission-statement",
-      title: "Statement",
-      content: `# Mission Statement
-
-Write the one sentence that you’d be proud to fail at.
-
-## Current draft
-(Put the real sentence here.)
-
-## Notes
-- It should feel slightly too ambitious.
-- It should be legible to a stranger.`
-    },
+    { id: "purpose-mission-statement", title: "Statement" },
     { id: "purpose-mission-evolution", title: "Evolution" },
     { id: "purpose-values", title: "Values", children: ["purpose-values-core", "purpose-values-conflicts"] },
     { id: "purpose-values-core", title: "Core" },
@@ -278,37 +232,9 @@ Write the one sentence that you’d be proud to fail at.
       aliases: ["trips", "planes", "hotels"],
       related: ["relationships", "work"],
     },
-    { id: "play-travel-places", title: "Places I’ve Visited", aliases: ["visited"] },
-    {
-      id: "play-travel-logs",
-      title: "Travel Logs",
-      aliases: ["journals"],
-      content: `# Travel Logs
-
-This is the long-form record: what I did, what I learned, what I’d repeat.
-
-## Template
-- Where / when
-- People
-- Highlights
-- Frictions
-- One photo / one sentence
-
-## Open questions
-- What places changed me the most?
-- What kinds of trips reliably reset me?`
-    },
-    {
-      id: "play-travel-favorites",
-      title: "Favorite Flights & Hotels",
-      content: `# Favorite Flights & Hotels
-
-This is where I keep the “worth it” list (comfort, value, vibe).
-
-## Rules
-- If I wouldn’t recommend it twice, it doesn’t stay.
-- Notes > star ratings.`
-    },
+    { id: "play-travel-places", title: "Places I've Visited", aliases: ["visited"] },
+    { id: "play-travel-logs", title: "Travel Logs", aliases: ["journals"] },
+    { id: "play-travel-favorites", title: "Favorite Flights & Hotels" },
     { id: "play-travel-planning", title: "Planning" },
     { id: "play-games", title: "Games" },
     { id: "play-goingout", title: "Going Out" },
