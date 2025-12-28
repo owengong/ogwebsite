@@ -484,12 +484,12 @@
       const content =
         typeof n.content === "string" && n.content.trim()
           ? n.content
-          : `# ${n.title}\n\nWrite your notes here in \`data.js\` by adding a \`content\` field.\n\n## Prompts\n- What is this page for?\n- What are my current rules / principles?\n- What changed recently?\n- Links / references\n`;
+          : "";
       elPanelContent.innerHTML = renderRichText(content);
     }
 
     if (!children.length) {
-      elPanelChildren.innerHTML = `<div class="chip is-empty" aria-disabled="true">No children yet</div>`;
+      elPanelChildren.innerHTML = `<div class="chip is-empty" aria-disabled="true">No subpages yet</div>`;
     } else {
       elPanelChildren.innerHTML = children
         .map(
