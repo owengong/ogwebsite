@@ -517,7 +517,9 @@
   }
 
   function renderOutline() {
-    const openSet = new Set(getPathIds(state.focusId));
+    const isMobile = window.innerWidth < 980;
+    // On mobile, start fully collapsed; on desktop, expand path to focus
+    const openSet = isMobile ? new Set() : new Set(getPathIds(state.focusId));
 
     function nodeHtml(id) {
       const n = getNode(id);
