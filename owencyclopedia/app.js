@@ -3,7 +3,6 @@
 (() => {
   const DATA = window.OWEN_MVP;
   if (!DATA || !Array.isArray(DATA.nodes)) {
-    // eslint-disable-next-line no-console
     console.error("[owencyclopedia] Missing window.OWEN_MVP data.");
     return;
   }
@@ -40,11 +39,9 @@
       for (const rid of n.related || []) if (!byId.has(rid)) missing.add(rid);
     }
     if (dupes.length) {
-      // eslint-disable-next-line no-console
       console.warn("[owencyclopedia] Duplicate node ids:", dupes);
     }
     if (missing.size) {
-      // eslint-disable-next-line no-console
       console.warn("[owencyclopedia] Missing referenced node ids:", Array.from(missing));
     }
   }
@@ -126,7 +123,7 @@
 
   const elApp = document.getElementById("app");
   const elCrumbs = document.getElementById("crumbs");
-  const elOutline = document.getElementById("outline");
+  const _elOutline = document.getElementById("outline"); // reserved for future use
   const elOutlineTree = document.getElementById("outlineTree");
   const elToggleOutline = document.getElementById("toggleOutline");
   const elToggleMap = document.getElementById("toggleMap");
@@ -202,7 +199,10 @@
   };
 
   function parseViewBox(vb) {
-    const parts = String(vb || "").trim().split(/[,\s]+/).map(Number);
+    const parts = String(vb || "")
+      .trim()
+      .split(/[,\s]+/)
+      .map(Number);
     if (parts.length !== 4 || parts.some((n) => Number.isNaN(n))) return null;
     return { x: parts[0], y: parts[1], w: parts[2], h: parts[3] };
   }
@@ -360,7 +360,9 @@
     // Show parent node if one exists (allows navigating back up)
     const parent = parentId ? getNode(parentId) : null;
     const { radius: childRadius, positions } = layoutChildrenRadial(children, Boolean(parent));
-    const parentPos = parent ? { id: parent.id, x: 0, y: -clamp((childRadius || 220) * 0.62, 120, 210) } : null;
+    const parentPos = parent
+      ? { id: parent.id, x: 0, y: -clamp((childRadius || 220) * 0.62, 120, 210) }
+      : null;
 
     elEdges.innerHTML = "";
     elNodes.innerHTML = "";
@@ -481,10 +483,7 @@
     const children = getChildren(n.id);
 
     if (elPanelContent) {
-      const content =
-        typeof n.content === "string" && n.content.trim()
-          ? n.content
-          : "";
+      const content = typeof n.content === "string" && n.content.trim() ? n.content : "";
       elPanelContent.innerHTML = renderRichText(content);
     }
 
@@ -709,13 +708,21 @@
 
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      state.search.activeIndex = clamp(state.search.activeIndex + 1, 0, state.search.results.length - 1);
+      state.search.activeIndex = clamp(
+        state.search.activeIndex + 1,
+        0,
+        state.search.results.length - 1
+      );
       renderSearchResults();
       return;
     }
     if (e.key === "ArrowUp") {
       e.preventDefault();
-      state.search.activeIndex = clamp(state.search.activeIndex - 1, 0, state.search.results.length - 1);
+      state.search.activeIndex = clamp(
+        state.search.activeIndex - 1,
+        0,
+        state.search.results.length - 1
+      );
       renderSearchResults();
       return;
     }
@@ -798,34 +805,42 @@
       };
     }
 
-    elLensSvg.addEventListener("touchstart", (e) => {
-      if (e.touches.length === 2) {
-        e.preventDefault();
-        pinch.active = true;
-        pinch.startDist = getTouchDistance(e.touches[0], e.touches[1]);
-        pinch.startZoom = map.zoom;
-      }
-    }, { passive: false });
-
-    elLensSvg.addEventListener("touchmove", (e) => {
-      if (!pinch.active || e.touches.length !== 2) return;
-      e.preventDefault();
-      
-      // Throttle updates to animation frames
-      if (pinch.pending) return;
-      
-      const dist = getTouchDistance(e.touches[0], e.touches[1]);
-      const center = getTouchCenter(e.touches[0], e.touches[1]);
-      
-      pinch.pending = requestAnimationFrame(() => {
-        pinch.pending = null;
-        const scale = dist / pinch.startDist;
-        const next = clamp(pinch.startZoom * scale, map.minZoom, map.maxZoom);
-        if (next !== map.zoom) {
-          zoomAtClientPoint(next, center.x, center.y);
+    elLensSvg.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.touches.length === 2) {
+          e.preventDefault();
+          pinch.active = true;
+          pinch.startDist = getTouchDistance(e.touches[0], e.touches[1]);
+          pinch.startZoom = map.zoom;
         }
-      });
-    }, { passive: false });
+      },
+      { passive: false }
+    );
+
+    elLensSvg.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!pinch.active || e.touches.length !== 2) return;
+        e.preventDefault();
+
+        // Throttle updates to animation frames
+        if (pinch.pending) return;
+
+        const dist = getTouchDistance(e.touches[0], e.touches[1]);
+        const center = getTouchCenter(e.touches[0], e.touches[1]);
+
+        pinch.pending = requestAnimationFrame(() => {
+          pinch.pending = null;
+          const scale = dist / pinch.startDist;
+          const next = clamp(pinch.startZoom * scale, map.minZoom, map.maxZoom);
+          if (next !== map.zoom) {
+            zoomAtClientPoint(next, center.x, center.y);
+          }
+        });
+      },
+      { passive: false }
+    );
 
     elLensSvg.addEventListener("touchend", (e) => {
       if (e.touches.length < 2) {
@@ -917,5 +932,3 @@
     });
   }
 })();
-
-

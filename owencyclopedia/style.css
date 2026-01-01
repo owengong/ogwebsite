@@ -6,18 +6,19 @@
   --bg1: #f2e7d6;
   --surface: rgba(255, 255, 255, 0.72);
   --surface2: rgba(255, 255, 255, 0.88);
-  --line: rgba(28, 25, 23, 0.10);
+  --line: rgba(28, 25, 23, 0.1);
   --line2: rgba(28, 25, 23, 0.16);
 
   --text: rgba(28, 25, 23, 0.92);
-  --muted: rgba(28, 25, 23, 0.70);
+  --muted: rgba(28, 25, 23, 0.7);
   --faint: rgba(28, 25, 23, 0.52);
 
   --shadow: 0 18px 70px rgba(0, 0, 0, 0.18);
   --shadow2: 0 10px 28px rgba(0, 0, 0, 0.12);
 
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial;
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial;
   --font-serif: "Playfair Display", ui-serif, "Iowan Old Style", Georgia, serif;
 
   --mapW: 360px;
@@ -39,7 +40,8 @@ body {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: radial-gradient(1100px 820px at 12% 8%, rgba(120, 87, 56, 0.14), transparent 62%),
+  background:
+    radial-gradient(1100px 820px at 12% 8%, rgba(120, 87, 56, 0.14), transparent 62%),
     radial-gradient(900px 680px at 86% 18%, rgba(59, 130, 246, 0.06), transparent 56%),
     linear-gradient(180deg, var(--bg0), var(--bg1)),
     repeating-linear-gradient(
@@ -84,9 +86,12 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 99px;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(28, 25, 23, 0.20)),
-    radial-gradient(circle at 70% 70%, rgba(120, 87, 56, 0.40), rgba(0, 0, 0, 0));
-  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.10), 0 10px 26px rgba(0, 0, 0, 0.14);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(28, 25, 23, 0.2)),
+    radial-gradient(circle at 70% 70%, rgba(120, 87, 56, 0.4), rgba(0, 0, 0, 0));
+  box-shadow:
+    0 0 0 1px rgba(28, 25, 23, 0.1),
+    0 10px 26px rgba(0, 0, 0, 0.14);
   border: 1px solid rgba(28, 25, 23, 0.12);
 }
 
@@ -133,7 +138,10 @@ body {
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+  transition:
+    background 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
   user-select: none;
 }
 
@@ -170,13 +178,17 @@ body {
   background: rgba(255, 255, 255, 0.62);
   color: rgba(28, 25, 23, 0.88);
   cursor: pointer;
-  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+  transition:
+    background 120ms ease,
+    border-color 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
 }
 
 .btn:hover {
   background: rgba(255, 255, 255, 0.78);
   border-color: rgba(28, 25, 23, 0.16);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
 }
 
 .btn:active {
@@ -219,7 +231,9 @@ body {
   color: rgba(28, 25, 23, 0.92);
   padding: 0 12px;
   outline: none;
-  transition: border-color 120ms ease, background 120ms ease;
+  transition:
+    border-color 120ms ease,
+    background 120ms ease;
 }
 
 .search__input:focus {
@@ -308,9 +322,11 @@ body {
   backdrop-filter: blur(12px);
   overflow: hidden;
   opacity: 1;
-  transition: opacity 160ms ease, transform 160ms ease;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
   border-radius: 16px;
-  border: 1px solid rgba(28, 25, 23, 0.10);
+  border: 1px solid rgba(28, 25, 23, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   margin-left: 12px;
 }
@@ -351,9 +367,11 @@ body {
   opacity: 0;
   pointer-events: none;
   transform: translateX(-8px);
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
   border-radius: 16px;
-  border: 1px solid rgba(28, 25, 23, 0.10);
+  border: 1px solid rgba(28, 25, 23, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   margin-right: 12px;
 }
@@ -412,7 +430,9 @@ body {
   border-right: 2px solid rgba(28, 25, 23, 0.28);
   border-bottom: 2px solid rgba(28, 25, 23, 0.28);
   transform: rotate(-45deg);
-  transition: transform 140ms ease, border-color 140ms ease;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease;
 }
 
 details[open] > summary .outline__caret {
@@ -429,7 +449,9 @@ details[open] > summary .outline__caret {
   padding: 6px 8px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background 120ms ease, color 120ms ease;
+  transition:
+    background 120ms ease,
+    color 120ms ease;
 }
 
 .outline__btn:hover {
@@ -474,7 +496,8 @@ details[open] > summary .outline__caret {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 44%, rgba(28, 25, 23, 0.06), transparent 58%),
+  background:
+    radial-gradient(circle at 50% 44%, rgba(28, 25, 23, 0.06), transparent 58%),
     radial-gradient(circle at 50% 52%, rgba(28, 25, 23, 0.035), transparent 70%),
     radial-gradient(circle at 50% 60%, rgba(120, 87, 56, 0.08), transparent 72%);
   opacity: 0.9;
@@ -488,7 +511,7 @@ details[open] > summary .outline__caret {
 }
 
 .edge {
-  stroke: rgba(28, 25, 23, 0.10);
+  stroke: rgba(28, 25, 23, 0.1);
   stroke-width: 1.2;
 }
 
@@ -595,7 +618,7 @@ details[open] > summary .outline__caret {
   max-width: 900px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(28, 25, 23, 0.10);
+  border: 1px solid rgba(28, 25, 23, 0.1);
   border-radius: 16px;
 }
 
@@ -649,12 +672,15 @@ details[open] > summary .outline__caret {
 .chip {
   border: 1px solid rgba(28, 25, 23, 0.12);
   background: rgba(255, 255, 255, 0.72);
-  color: rgba(28, 25, 23, 0.90);
+  color: rgba(28, 25, 23, 0.9);
   border-radius: 999px;
   padding: 8px 10px;
   font-size: 12px;
   cursor: pointer;
-  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+  transition:
+    background 120ms ease,
+    border-color 120ms ease,
+    transform 120ms ease;
   user-select: none;
 }
 
@@ -771,7 +797,7 @@ details[open] > summary .outline__caret {
     padding: 12px;
     gap: 12px;
   }
-  
+
   /* Stack vertically on mobile */
   .outline {
     order: 1;
@@ -781,19 +807,19 @@ details[open] > summary .outline__caret {
     border-radius: 14px;
     display: none;
   }
-  
+
   .app.outline-open .outline {
     display: block;
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
   }
-  
+
   .doc {
     order: 2;
     padding: 0;
   }
-  
+
   .map {
     order: 3;
     margin-left: 0;
@@ -802,20 +828,20 @@ details[open] > summary .outline__caret {
     min-height: 320px;
     border-radius: 14px;
   }
-  
+
   .app.map-closed .map {
     display: none;
   }
-  
+
   .lens--inMap {
     height: calc(100% - 52px);
   }
-  
+
   .panel__inner {
     padding: 18px 16px 24px 16px;
     border-radius: 14px;
   }
-  
+
   .outline__tree {
     max-height: calc(40vh - 60px);
   }
@@ -827,51 +853,49 @@ details[open] > summary .outline__caret {
     padding: 8px;
     gap: 10px;
   }
-  
+
   .topbar {
     padding: 10px;
   }
-  
+
   .brand__title {
     font-size: 12px;
   }
-  
+
   .brand__subtitle {
     font-size: 10px;
   }
-  
+
   .btn {
     height: 32px;
     padding: 0 10px;
     font-size: 13px;
   }
-  
+
   .panel__inner {
     padding: 14px 12px 20px 12px;
     border-radius: 12px;
   }
-  
+
   .panel__title {
     font-size: 20px;
   }
-  
+
   .outline,
   .map {
     border-radius: 12px;
   }
-  
+
   .map {
     height: 45vh;
     min-height: 280px;
   }
-  
+
   .outline {
     max-height: 35vh;
   }
-  
+
   .outline__tree {
     max-height: calc(35vh - 56px);
   }
 }
-
-

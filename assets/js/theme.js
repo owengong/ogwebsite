@@ -16,7 +16,7 @@
       return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
-    } catch (e) {
+    } catch (_e) {
       return "light";
     }
   }
@@ -33,12 +33,17 @@
   function apply(theme, persist) {
     if (theme !== "light" && theme !== "dark") return;
     root.setAttribute("data-theme", theme);
-    toggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    toggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
     setMetaThemeColor(theme);
     if (persist) {
       try {
         localStorage.setItem(STORAGE_KEY, theme);
-      } catch (e) {}
+      } catch (_e) {
+        // localStorage may be unavailable (private browsing)
+      }
     }
   }
 
@@ -46,7 +51,7 @@
   var stored;
   try {
     stored = localStorage.getItem(STORAGE_KEY);
-  } catch (e) {
+  } catch (_e) {
     stored = null;
   }
 

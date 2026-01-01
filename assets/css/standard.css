@@ -15,7 +15,8 @@
   --accent-hover: #3a6580;
   --focus: rgba(74, 124, 155, 0.4);
 
-  --font-sans: "Söhne", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:
+    "Söhne", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --maxw: 680px;
   --pad: 28px;
   --radius: 10px;
@@ -23,7 +24,7 @@
 
 /* Dark mode — warm ink tones */
 @media (prefers-color-scheme: dark) {
-:root {
+  :root {
     --bg: #1a1816;
     --surface: #211f1c;
     --text: #d4cfc5;
@@ -61,7 +62,9 @@
   --focus: rgba(139, 184, 208, 0.4);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -70,7 +73,7 @@ html {
 }
 
 body {
-    margin: 0;
+  margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
@@ -82,7 +85,7 @@ body {
 
 a {
   color: var(--accent);
-    text-decoration: none;
+  text-decoration: none;
   transition: color 0.15s ease;
 }
 
@@ -98,12 +101,15 @@ button:focus-visible {
 }
 
 strong {
-    font-weight: 600;
+  font-weight: 600;
   color: var(--text-strong);
 }
 
-h1, h2, h3, p {
-    margin: 0;
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
 /* ------------------------------------------------------------ */
@@ -111,21 +117,24 @@ h1, h2, h3, p {
 /* ------------------------------------------------------------ */
 
 .theme-toggle {
-    position: fixed;
+  position: fixed;
   top: 20px;
   right: 20px;
   z-index: 100;
   width: 42px;
   height: 42px;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 50%;
   cursor: pointer;
   color: var(--muted);
-  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .theme-toggle:hover {
@@ -135,20 +144,36 @@ h1, h2, h3, p {
 }
 
 /* Show sun in dark mode, moon in light mode */
-.icon-sun { display: none; }
-.icon-moon { display: block; }
+.icon-sun {
+  display: none;
+}
+.icon-moon {
+  display: block;
+}
 
 :root[data-theme="dark"] .icon-sun,
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .icon-sun { display: block; }
-  :root:not([data-theme="light"]) .icon-moon { display: none; }
+  :root:not([data-theme="light"]) .icon-sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .icon-moon {
+    display: none;
+  }
 }
 
-:root[data-theme="dark"] .icon-sun { display: block; }
-:root[data-theme="dark"] .icon-moon { display: none; }
+:root[data-theme="dark"] .icon-sun {
+  display: block;
+}
+:root[data-theme="dark"] .icon-moon {
+  display: none;
+}
 
-:root[data-theme="light"] .icon-sun { display: none; }
-:root[data-theme="light"] .icon-moon { display: block; }
+:root[data-theme="light"] .icon-sun {
+  display: none;
+}
+:root[data-theme="light"] .icon-moon {
+  display: block;
+}
 
 /* ------------------------------------------------------------ */
 /* Layout                                                        */
@@ -193,11 +218,13 @@ h1, h2, h3, p {
 }
 
 .social-icon {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   color: var(--muted);
-  transition: color 0.15s ease, transform 0.15s ease;
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .social-icon:hover {
@@ -267,7 +294,9 @@ main {
 .about a strong {
   color: var(--text-strong);
   border-bottom: 1px solid var(--border);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .about a:hover strong {
@@ -325,7 +354,7 @@ main {
 
 .edu-school {
   font-size: 1.1rem;
-    font-weight: 600;
+  font-weight: 600;
   color: var(--text-strong);
 }
 
@@ -345,17 +374,19 @@ main {
 
 .button {
   display: inline-flex;
-    align-items: center;
+  align-items: center;
   gap: 8px;
   padding: 12px 20px;
   font-size: 0.95rem;
-    font-weight: 500;
+  font-weight: 500;
   color: var(--text-strong);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 999px;
-     text-decoration: none;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .button:hover {
@@ -388,7 +419,7 @@ main {
 
 .section-title {
   font-size: 0.85rem;
-    font-weight: 500;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -403,7 +434,7 @@ main {
 }
 
 .bullets {
-    margin: 0;
+  margin: 0;
   padding-left: 18px;
   color: var(--text);
 }
@@ -451,7 +482,7 @@ main {
 
 /* Teaching page header with back button */
 .site-title-row {
-    display: flex;
+  display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
@@ -460,7 +491,7 @@ main {
 
 .site-nav {
   margin-top: 20px;
-    display: flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
   font-size: 0.95rem;
@@ -511,7 +542,7 @@ section + section {
 
   .actions {
     flex-direction: column;
-}
+  }
 
   .button {
     width: 100%;
@@ -561,5 +592,5 @@ section + section {
 
   a {
     text-decoration: none;
-}
+  }
 }

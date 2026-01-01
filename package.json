@@ -1,0 +1,26 @@
+{
+  "name": "ogwebsite",
+  "version": "1.0.0",
+  "description": "Personal website + Owencyclopedia.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"**/*.{html,css,js,json}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json}\""
+  },
+  "_note": "If project grows, consider adding ESLint: npm i -D eslint @eslint/js globals",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owengong/ogwebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/owengong/ogwebsite/issues"
+  },
+  "homepage": "https://github.com/owengong/ogwebsite#readme",
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
+}

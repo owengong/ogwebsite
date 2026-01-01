@@ -24,19 +24,11 @@ window.OWEN_MVP = {
     {
       id: "home",
       title: "Owencyclopedia",
-      blurb:
-        "心得图",
-      content: "My name is Owen. Since 2018, I've collected thoughts on every dimension of life I can think of, and this website serves as an organized, abridged version of my notes. Not advice or a protocol for anyone else to follow, just experiences and judgments that help me make sense of the world.",
+      blurb: "心得图",
+      content:
+        "My name is Owen. Since 2018, I've collected thoughts on every dimension of life I can think of, and this website serves as an organized, abridged version of my notes. Not advice or a protocol for anyone else to follow, just experiences and judgments that help me make sense of the world.",
       aliases: ["owen", "home", "life map", "fractal"],
-      children: [
-        "health",
-        "relationships",
-        "mastery",
-        "wealth",
-        "work",
-        "purpose",
-        "play",
-      ],
+      children: ["health", "relationships", "mastery", "wealth", "work", "purpose", "play"],
     },
 
     // Health
@@ -86,7 +78,11 @@ window.OWEN_MVP = {
     },
     { id: "health-sleep-optimization", title: "Sleep Optimization" },
     { id: "health-sleep-dreams", title: "Dream Journal" },
-    { id: "health-other", title: "Other", children: ["health-other-medical", "health-other-experiments"] },
+    {
+      id: "health-other",
+      title: "Other",
+      children: ["health-other-medical", "health-other-experiments"],
+    },
     { id: "health-other-medical", title: "Medical Records" },
     { id: "health-other-experiments", title: "Experiments" },
 
@@ -98,16 +94,28 @@ window.OWEN_MVP = {
       children: ["rel-family", "rel-friends", "rel-romantic", "rel-professional"],
       related: ["purpose", "play-hosting"],
     },
-    { id: "rel-family", title: "Family", children: ["rel-family-history", "rel-family-traditions"] },
+    {
+      id: "rel-family",
+      title: "Family",
+      children: ["rel-family-history", "rel-family-traditions"],
+    },
     { id: "rel-family-history", title: "History" },
     { id: "rel-family-traditions", title: "Traditions" },
     { id: "rel-friends", title: "Friends", children: ["rel-friends-core", "rel-friends-groups"] },
     { id: "rel-friends-core", title: "Core Circle" },
     { id: "rel-friends-groups", title: "Groups" },
-    { id: "rel-romantic", title: "Romantic", children: ["rel-romantic-philosophy", "rel-romantic-lessons"] },
+    {
+      id: "rel-romantic",
+      title: "Romantic",
+      children: ["rel-romantic-philosophy", "rel-romantic-lessons"],
+    },
     { id: "rel-romantic-philosophy", title: "Philosophy" },
     { id: "rel-romantic-lessons", title: "Lessons" },
-    { id: "rel-professional", title: "Professional", children: ["rel-pro-mentors", "rel-pro-collaborators"] },
+    {
+      id: "rel-professional",
+      title: "Professional",
+      children: ["rel-pro-mentors", "rel-pro-collaborators"],
+    },
     { id: "rel-pro-mentors", title: "Mentors" },
     { id: "rel-pro-collaborators", title: "Collaborators" },
 
@@ -119,18 +127,34 @@ window.OWEN_MVP = {
       children: ["mastery-skills", "mastery-projects", "mastery-knowledge", "mastery-principles"],
       related: ["work", "purpose-mission"],
     },
-    { id: "mastery-skills", title: "Skills", children: ["mastery-skills-technical", "mastery-skills-soft"] },
+    {
+      id: "mastery-skills",
+      title: "Skills",
+      children: ["mastery-skills-technical", "mastery-skills-soft"],
+    },
     { id: "mastery-skills-technical", title: "Technical" },
     { id: "mastery-skills-soft", title: "Soft Skills" },
-    { id: "mastery-projects", title: "Projects", children: ["mastery-projects-current", "mastery-projects-past", "mastery-projects-ideas"] },
+    {
+      id: "mastery-projects",
+      title: "Projects",
+      children: ["mastery-projects-current", "mastery-projects-past", "mastery-projects-ideas"],
+    },
     { id: "mastery-projects-current", title: "Current" },
     { id: "mastery-projects-past", title: "Past" },
     { id: "mastery-projects-ideas", title: "Ideas" },
-    { id: "mastery-knowledge", title: "Knowledge", children: ["mastery-knowledge-books", "mastery-knowledge-courses", "mastery-knowledge-notes"] },
+    {
+      id: "mastery-knowledge",
+      title: "Knowledge",
+      children: ["mastery-knowledge-books", "mastery-knowledge-courses", "mastery-knowledge-notes"],
+    },
     { id: "mastery-knowledge-books", title: "Books" },
     { id: "mastery-knowledge-courses", title: "Courses" },
     { id: "mastery-knowledge-notes", title: "Notes" },
-    { id: "mastery-principles", title: "Principles", children: ["mastery-principles-beliefs", "mastery-principles-frameworks"] },
+    {
+      id: "mastery-principles",
+      title: "Principles",
+      children: ["mastery-principles-beliefs", "mastery-principles-frameworks"],
+    },
     { id: "mastery-principles-beliefs", title: "Beliefs" },
     { id: "mastery-principles-frameworks", title: "Frameworks" },
 
@@ -142,14 +166,30 @@ window.OWEN_MVP = {
       children: ["wealth-finances", "wealth-career", "wealth-assets"],
       related: ["work"],
     },
-    { id: "wealth-finances", title: "Finances", children: ["wealth-finances-budget", "wealth-finances-investments", "wealth-finances-networth"] },
+    {
+      id: "wealth-finances",
+      title: "Finances",
+      children: [
+        "wealth-finances-budget",
+        "wealth-finances-investments",
+        "wealth-finances-networth",
+      ],
+    },
     { id: "wealth-finances-budget", title: "Budget" },
     { id: "wealth-finances-investments", title: "Investments" },
     { id: "wealth-finances-networth", title: "Net Worth" },
-    { id: "wealth-career", title: "Career", children: ["wealth-career-path", "wealth-career-history"] },
+    {
+      id: "wealth-career",
+      title: "Career",
+      children: ["wealth-career-path", "wealth-career-history"],
+    },
     { id: "wealth-career-path", title: "Path" },
     { id: "wealth-career-history", title: "History" },
-    { id: "wealth-assets", title: "Assets", children: ["wealth-assets-realestate", "wealth-assets-equity"] },
+    {
+      id: "wealth-assets",
+      title: "Assets",
+      children: ["wealth-assets-realestate", "wealth-assets-equity"],
+    },
     { id: "wealth-assets-realestate", title: "Real Estate" },
     { id: "wealth-assets-equity", title: "Equity" },
 
@@ -161,14 +201,22 @@ window.OWEN_MVP = {
       children: ["work-current", "work-past", "work-side"],
       related: ["purpose-mission", "mastery-projects"],
     },
-    { id: "work-current", title: "Current Role", children: ["work-current-responsibilities", "work-current-projects", "work-current-team"] },
+    {
+      id: "work-current",
+      title: "Current Role",
+      children: ["work-current-responsibilities", "work-current-projects", "work-current-team"],
+    },
     { id: "work-current-responsibilities", title: "Responsibilities" },
     { id: "work-current-projects", title: "Projects" },
     { id: "work-current-team", title: "Team" },
     { id: "work-past", title: "Past Roles", children: ["work-past-history", "work-past-lessons"] },
     { id: "work-past-history", title: "History" },
     { id: "work-past-lessons", title: "Lessons" },
-    { id: "work-side", title: "Side Projects", children: ["work-side-active", "work-side-archived"] },
+    {
+      id: "work-side",
+      title: "Side Projects",
+      children: ["work-side-active", "work-side-archived"],
+    },
     { id: "work-side-active", title: "Active" },
     { id: "work-side-archived", title: "Archived" },
 
@@ -180,13 +228,25 @@ window.OWEN_MVP = {
       children: ["purpose-mission", "purpose-values", "purpose-legacy"],
       related: ["relationships", "mastery"],
     },
-    { id: "purpose-mission", title: "Mission", children: ["purpose-mission-statement", "purpose-mission-evolution"] },
+    {
+      id: "purpose-mission",
+      title: "Mission",
+      children: ["purpose-mission-statement", "purpose-mission-evolution"],
+    },
     { id: "purpose-mission-statement", title: "Statement" },
     { id: "purpose-mission-evolution", title: "Evolution" },
-    { id: "purpose-values", title: "Values", children: ["purpose-values-core", "purpose-values-conflicts"] },
+    {
+      id: "purpose-values",
+      title: "Values",
+      children: ["purpose-values-core", "purpose-values-conflicts"],
+    },
     { id: "purpose-values-core", title: "Core" },
     { id: "purpose-values-conflicts", title: "Conflicts" },
-    { id: "purpose-legacy", title: "Legacy", children: ["purpose-legacy-impact", "purpose-legacy-wants"] },
+    {
+      id: "purpose-legacy",
+      title: "Legacy",
+      children: ["purpose-legacy-impact", "purpose-legacy-wants"],
+    },
     { id: "purpose-legacy-impact", title: "Impact" },
     { id: "purpose-legacy-wants", title: "Wants" },
 
@@ -228,7 +288,12 @@ window.OWEN_MVP = {
     {
       id: "play-travel",
       title: "Travel",
-      children: ["play-travel-places", "play-travel-logs", "play-travel-favorites", "play-travel-planning"],
+      children: [
+        "play-travel-places",
+        "play-travel-logs",
+        "play-travel-favorites",
+        "play-travel-planning",
+      ],
       aliases: ["trips", "planes", "hotels"],
       related: ["relationships", "work"],
     },
@@ -247,5 +312,3 @@ window.OWEN_MVP = {
     { id: "play-collectables", title: "Collectables" },
   ],
 };
-
-
